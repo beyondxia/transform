@@ -1,0 +1,30 @@
+
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    //gradle sdk
+    implementation gradleApi()
+    //groovy sdk
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.1.4'
+    implementation 'org.javassist:javassist:3.20.0-GA'
+    implementation 'commons-io:commons-io:2.5'
+
+//    implementation 'com.pingan.aladdin:annotation:1.0.0-SNAPSHOT'
+    implementation 'com.beyondxia.modules:annotation:1.0.6'
+}
+
+repositories {
+    maven {
+        url 'https://dl.bintray.com/beyondxia/annotation'
+    }
+    jcenter()
+    google()
+}
+
+group = 'com.beyondxia.transform.plugin'
+version = '1.1.1' // 版本
+
+
+apply from: '../bintray.gradle'
